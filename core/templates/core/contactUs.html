@@ -1,0 +1,50 @@
+{# "Contact Us" Section #}
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2><span>Contact</span> Us</h2>
+      <p>We are always ready to reserve a place for you and take into account all your wishes</p>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+
+    <form method="post" role="form" class="email-form">
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 form-group">
+
+          {{ form_contact.name }}
+          <div class="validate"></div>
+        </div>
+
+
+
+        <div class="col-lg-6 col-md-6 form-group mt-3 mt-md-0">
+
+          {{ form_contact.email }}
+          <div class="validate"></div>
+        </div>
+
+
+
+        <div class="col-lg col-md-6 form-group mt-3 mt-md-0">
+          {{ form_contact.topic }}
+          <div class="validate"></div>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+
+        {{ form_contact.message }}
+        <div class="validate"></div>
+      </div>
+      <div class="mb-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. In a short time you will receive a response to it in your mail. Thank you!</div>
+      </div>
+      <div class="text-center"><button type="submit">Send Message</button></div>
+    </form>
+  </div>
+</section>

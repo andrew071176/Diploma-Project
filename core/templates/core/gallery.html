@@ -1,0 +1,24 @@
+{# "Gallery" Section #}
+<section id="gallery" class="gallery">
+  <div class="container-fluid">
+
+    <div class="section-title">
+      <h2>We care about <span>your comfort</span></h2>
+      <p>We have everything to make your stay enjoyable and interesting</p>
+    </div>
+
+    <div class="row g-0">
+      {% for item in galleries %}
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="{{item.photo.url}}" class="gallery-lightbox">
+            <img src="{{item.photo.url}}" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

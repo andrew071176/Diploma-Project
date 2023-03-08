@@ -1,0 +1,26 @@
+{# "Staff" Section #}
+<section id="chefs" class="chefs">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our professional <span>chefs</span></h2>
+      <p style="margin-bottom: 30px;">They always do their job so that you are satisfied!</p>
+    </div>
+
+    <div class="row">
+      {% for item in staff %}
+      <div class="col-lg-4 col-md-6">
+        <div class="member">
+          <div class="pic"><img src="{{item.photo.url}}" class="img-fluid" alt=""></div>
+          <div class="member-info">
+            <h4>{{item.name}}</h4>
+            <span>{{item.role}}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

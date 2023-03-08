@@ -1,0 +1,57 @@
+{# "Testimonial" Section #}
+<section id="testimonials" class="testimonials">
+<div class="section-title" style="margin-left: 25px;">
+    <h2>Our <span>testimonials</span> </h2>
+    <p style="margin-bottom: 30px;">Actuall comments from a real people!</p>
+  </div>
+
+  <div class="swiper position-relative">
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        {% for item in testimonials %}
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+
+            <img src="{{item.photo.url}}" class="testimonial-img" alt="">
+            <h3>{{item.name}}</h3>
+            <h4>{{item.role}}</h4>
+            <div class="stars">
+              {% if item.rating == 1 %}
+              <i class="bi bi-star-fill"></i>
+              {% elif item.rating == 2 %}
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              {% elif item.rating == 3 %}
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              {% elif item.rating == 4 %}
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              {% elif item.rating == 5 %}
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              {% endif %}
+            </div>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{item.testimonial}}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,49 @@
+{# "Reservation" Section #}
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Make <span>an order</span></h2>
+      <p>Please write to us and we will call you back</p>
+    </div>
+    <form  method="post" class="email-form" data-aos="fade-up" data-aos-delay="100">
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 form-group">
+
+          {{ form_reserve.name }}
+          <div class="validate"></div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+
+          {{ form_reserve.phone }}
+          <div class="validate"></div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          {{ form_reserve.persons }}
+          <div class="validate"></div>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+
+        {{ form_reserve.message }}
+        <div class="validate"></div>
+      </div>
+      <div class="mb-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your order has been successfully shipped. We will dial you or send you a notification by mail as soon as the reservation is approved. Thank you!</div>
+      </div>
+      <div class="text-center"><button type="submit">Send Message</button></div>
+    </form>
+
+  </div>
+</section>
+<!-- End Book A Table Section -->
